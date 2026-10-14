@@ -4,7 +4,7 @@
 # Same design, settings and generator as S34.R (n = 100, p = 200, K in {1, 5, 0},
 # delta_obs in {0, .5, 1, 1.5, 2}, B = 50, 2D-SS grid seq(0, 1, 5), 40 replicates).
 # Only SS and 2D-SS are run (no baselines), each with four selection rules:
-#   Largest-gap      : the rule used in Study 4 (reproduces the existing rows)
+#   Largest-gap      : the rule used in Study 4 (close to the Study 4 rows; this is a fresh run)
 #   Known s (top-s)  : the s most frequent features (uses the true s; compare with the
 #                      baselines' CEILINGS, not their package-tuned versions)
 #   Fixed tau = 0.3  : pre-specified, no knowledge of s
