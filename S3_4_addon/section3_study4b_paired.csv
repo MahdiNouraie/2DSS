@@ -1,0 +1,56 @@
+"comparison","K","delta_obs","diff_mean","diff_se","n"
+"SS minus 2D-SS, largest-gap (F1)",0,0,0.252200577200577,0.0280867094276827,40
+"SS minus 2D-SS, largest-gap (F1)",1,0,0.212465728715729,0.0196113787863828,40
+"SS minus 2D-SS, largest-gap (F1)",5,0,0.0490999278499279,0.0149238646464673,40
+"SS minus 2D-SS, largest-gap (F1)",0,0.5,0.0616666666666667,0.0203049443796091,40
+"SS minus 2D-SS, largest-gap (F1)",1,0.5,0.0447619047619048,0.0152953440180366,40
+"SS minus 2D-SS, largest-gap (F1)",5,0.5,0.0461309523809524,0.0142601744380762,40
+"SS minus 2D-SS, largest-gap (F1)",0,1,0.045734126984127,0.0194927611368572,40
+"SS minus 2D-SS, largest-gap (F1)",1,1,0.0502976190476191,0.0168006967963763,40
+"SS minus 2D-SS, largest-gap (F1)",5,1,0.0248214285714286,0.0136431835649984,40
+"SS minus 2D-SS, largest-gap (F1)",0,1.5,-0.0113095238095238,0.00658911261275355,40
+"SS minus 2D-SS, largest-gap (F1)",1,1.5,-0.00051587301587301,0.00688903412742245,40
+"SS minus 2D-SS, largest-gap (F1)",5,1.5,-0.00333694083694083,0.00978973085847977,40
+"SS minus 2D-SS, largest-gap (F1)",0,2,0.00216644466644467,0.0160139794380917,40
+"SS minus 2D-SS, largest-gap (F1)",1,2,-0.0100595238095238,0.00978855452099248,40
+"SS minus 2D-SS, largest-gap (F1)",5,2,0.0045436507936508,0.00586077850215345,40
+"SS minus 2D-SS, known s (F1)",0,0,0.11,0.022588855886397,40
+"SS minus 2D-SS, known s (F1)",1,0,0.065,0.0194639706598154,40
+"SS minus 2D-SS, known s (F1)",5,0,0.015,0.0194639706598154,40
+"SS minus 2D-SS, known s (F1)",0,0.5,0.045,0.0133733374236259,40
+"SS minus 2D-SS, known s (F1)",1,0.5,0.005,0.0151699770971549,40
+"SS minus 2D-SS, known s (F1)",5,0.5,0.045,0.0133733374236259,40
+"SS minus 2D-SS, known s (F1)",0,1,0.02,0.0156892908110547,40
+"SS minus 2D-SS, known s (F1)",1,1,2.04697370165263e-18,0.0101273936708367,40
+"SS minus 2D-SS, known s (F1)",5,1,0,0,40
+"SS minus 2D-SS, known s (F1)",0,1.5,1.97758476261356e-18,0.00716114874039433,40
+"SS minus 2D-SS, known s (F1)",1,1.5,0.01,0.01,40
+"SS minus 2D-SS, known s (F1)",5,1.5,-0.01,0.01,40
+"SS minus 2D-SS, known s (F1)",0,2,0.02,0.0139596488090423,40
+"SS minus 2D-SS, known s (F1)",1,2,-0.01,0.01229967687714,40
+"SS minus 2D-SS, known s (F1)",5,2,0.005,0.00873395965653902,40
+"2D-SS known s minus largest-gap (F1)",0,0,0.191230158730159,0.0308096663694216,40
+"2D-SS known s minus largest-gap (F1)",1,0,0.18125,0.0194452893153272,40
+"2D-SS known s minus largest-gap (F1)",5,0,0.05625,0.0224456251805021,40
+"2D-SS known s minus largest-gap (F1)",0,0.5,0.0279166666666667,0.0240009077845209,40
+"2D-SS known s minus largest-gap (F1)",1,0.5,-0.0088095238095238,0.024773114303184,40
+"2D-SS known s minus largest-gap (F1)",5,0.5,-0.0341071428571428,0.0171807992094228,40
+"2D-SS known s minus largest-gap (F1)",0,1,-0.0168849206349206,0.0272254819979649,40
+"2D-SS known s minus largest-gap (F1)",1,1,0.00654761904761907,0.0217501895484194,40
+"2D-SS known s minus largest-gap (F1)",5,1,-0.0513095238095238,0.0214470395928421,40
+"2D-SS known s minus largest-gap (F1)",0,1.5,-0.0358333333333333,0.0196397488938274,40
+"2D-SS known s minus largest-gap (F1)",1,1.5,-0.0240079365079365,0.0182695282817257,40
+"2D-SS known s minus largest-gap (F1)",5,1.5,-0.0263528138528138,0.0184657254366528,40
+"2D-SS known s minus largest-gap (F1)",0,2,-0.0218414918414918,0.0182373658328606,40
+"2D-SS known s minus largest-gap (F1)",1,2,-0.0427380952380952,0.0199075115235183,40
+"2D-SS known s minus largest-gap (F1)",5,2,-0.0559325396825397,0.0151523944247237,40
+"SS minus 2D-SS, known s (confounder rate)",1,0,0.375,0.0775217091182553,40
+"SS minus 2D-SS, known s (confounder rate)",5,0,0.55,0.0796627506815692,40
+"SS minus 2D-SS, known s (confounder rate)",1,0.5,0,0,40
+"SS minus 2D-SS, known s (confounder rate)",5,0.5,0.1,0.0480384461415261,40
+"SS minus 2D-SS, known s (confounder rate)",1,1,0,0,40
+"SS minus 2D-SS, known s (confounder rate)",5,1,-0.025,0.025,40
+"SS minus 2D-SS, known s (confounder rate)",1,1.5,0,0,40
+"SS minus 2D-SS, known s (confounder rate)",5,1.5,-0.025,0.025,40
+"SS minus 2D-SS, known s (confounder rate)",1,2,0,0,40
+"SS minus 2D-SS, known s (confounder rate)",5,2,0.025,0.025,40
