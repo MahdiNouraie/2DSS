@@ -3,7 +3,7 @@
 # Theorem "gap" needs the boundary gap f_(s) - f_(s+1) to exceed every
 # within-group gap. With strong AND weak signals the largest gap can fall
 # inside S, and the rule underestimates s. Here we
-#   (a) construct the failure (weak strength w = 0.5 is the original design),
+#   (a) construct the failure (w = 0.5),
 #   (b) sweep the weak-signal strength to show where it appears and disappears,
 #   (c) compare the largest-gap rule with a known-s rule (top-s) and with
 #       fixed thresholds tau in {0.15, 0.3, 0.6},
