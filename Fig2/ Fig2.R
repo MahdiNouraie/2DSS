@@ -74,7 +74,7 @@ df <- data.frame(
 )
 
 # ---------------- save results as CSV ----------------
-write.csv(df, "fig1_ic_violated_frequencies.csv", row.names = FALSE)
+write.csv(df, "fig2_ic_violated_frequencies.csv", row.names = FALSE)
 
 summ <- do.call(rbind, lapply(grp_levels, function(g) {
   idx <- which(grp == g)
@@ -82,18 +82,18 @@ summ <- do.call(rbind, lapply(grp_levels, function(g) {
   data.frame(group = g, delta = delta_grid, n_features = length(idx),
              mean = rowMeans(F), min = apply(F, 1, min), max = apply(F, 1, max))
 }))
-write.csv(summ, "fig1_ic_violated_summary.csv", row.names = FALSE)
+write.csv(summ, "fig2_ic_violated_summary.csv", row.names = FALSE)
 
 b <- beta_rel / lambda
 z <- sign(beta_rel)
 cnu <- sapply(delta_grid, function(d) abs(sum(a * (z + d^2 * b))) / (1 + d^2))
-write.csv(data.frame(delta = delta_grid, c_nu = cnu), "fig1_ic_violated_cnu.csv", row.names = FALSE)
+write.csv(data.frame(delta = delta_grid, c_nu = cnu), "fig2_ic_violated_cnu.csv", row.names = FALSE)
 
 write.csv(data.frame(n = n, p = p, n1 = n1, K = K, rho_irr = rho_irr,
                      lambda = lambda, B = B, n_weak = n_weak, m_weak = m_weak,
                      m_strong = m_strong, x_conf = x_conf,
                      A = sum(a * z), B_stat = sum(a * b), norm_a = sqrt(sum(a^2))),
-          "fig1_ic_violated_design.csv", row.names = FALSE)
+          "fig2_ic_violated_design.csv", row.names = FALSE)
 
 # ---------------- plot ----------------
 draw_order <- c("Other irrelevant", "Confounder", "Weak relevant", "Strong relevant")
@@ -120,5 +120,5 @@ p1 <- ggplot(df, aes(x = delta, y = freq, group = var, color = group,
   labs(x = expression(delta), y = "Selection frequency")
 
 print(p1)
-ggsave("fig1_ic_violated.pdf", plot = p1, width = 8, height = 5, device = "pdf")
-cat("Saved: fig1_ic_violated.pdf and four CSV files (frequencies, summary, cnu, design)\n")
+ggsave("fig2_ic_violated.pdf", plot = p1, width = 8, height = 5, device = "pdf")
+cat("Saved: fig2_ic_violated.pdf and four CSV files (frequencies, summary, cnu, design)\n")
