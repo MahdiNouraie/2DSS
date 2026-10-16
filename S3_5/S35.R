@@ -15,8 +15,6 @@
 #         beta = (6, 5, w*1, w*0.9, w*0.8), w in {0.3, 0.5, 0.8, 1.2, 2}.
 #         (w = 0.5 gives (0.5, 0.45, 0.4).)
 #
-# Colours: Okabe-Ito (colour-blind safe). SS #D55E00, 2D-SS #0072B2 as in the
-# other studies; rules use the remaining Okabe-Ito colours plus linetype/shape.
 
 suppressWarnings(options(warn = -1))
 
