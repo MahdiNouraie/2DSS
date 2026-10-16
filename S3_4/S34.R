@@ -164,8 +164,7 @@ aggregate_frequencies <- function(X, y, grid, n1_use, B_use, lam, alpha) {
 #   cv / cv1se : the packages' data-driven tuning (min rule / 1-SE rule),
 #   best       : the tuning-path point with the highest F1. This uses the truth, so
 #                it is an optimistic CEILING for any tuning rule.
-# Nonzero = |coef| > 1e-10 (the threshold hdme uses; LP solutions carry dust).
-# Errors from forked workers are returned as data, since their output is not shown.
+# nonzero = |coef| > 1e-10 (hdme's threshold)
 # ---------------------------------------------------------------------------
 best_col <- function(B) {
   f1 <- apply(abs(B) > 1e-10, 2, function(v) selection_metrics(v, 0)[["F1"]])
