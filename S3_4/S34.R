@@ -142,23 +142,9 @@ aggregate_frequencies <- function(X, y, grid, n1_use, B_use, lam, alpha) {
 }
 
 # ---------------------------------------------------------------------------
-# Baseline wrappers (following the package sources, the hdme vignette and the
-# original papers)
-#
-# Corrected Lasso (Loh & Wainwright 2012; hdme):  needs Sigma_uu = sigma^2 I.
-#   cv_corrected_lasso() picks the l1 radius by K-fold CV of the corrected loss
-#   ($radius_min; $radius_1se is the 1-SE rule). Fit on the radius grid via
-#   corrected_lasso(W, y, sigmaUU, radii)$betaCorr.
-# CoCoLasso (Datta & Zou 2017; BDcocolasso::coco): needs tau = SD of the additive
-#   error (Sigma_hat = Z'Z/n - tau^2 I). tau is on the scale of Z, so scale.Z = FALSE
-#   (all columns have unit variance here). Tuning: calibrated K-fold CV over a
-#   100-point lambda path: $beta.opt (CV minimum) and $beta.sd (1-SE rule).
-# GMUS (Sorensen et al. 2018; hdme::gmus): does NOT take a noise level. It needs
-#   (lambda, delta); the authors fix lambda at the cross-validated lasso value
-#   (lambda_min or lambda_se, from cv.glmnet) and choose delta by the ELBOW RULE on
-#   the number-of-nonzeros-versus-delta curve (Rosenbaum & Tsybakov 2010). We
-#   automate the elbow as the point farthest below the chord of the normalised curve,
-#   on delta in {0, 0.05, ..., 0.5} (the range of the authors' own elbow plots).
+# Baseline wrappers
+# cv / cv1se: each package's own tuning (min / 1-SE rule)
+# best: highest-F1 point on the tuning path (uses the truth, so a ceiling)
 #
 # Selections returned per baseline:
 #   cv / cv1se : the packages' data-driven tuning (min rule / 1-SE rule),
