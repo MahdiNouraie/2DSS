@@ -14,7 +14,6 @@
 #   Figure 3: confounder's complementary-pairs rate vs delta_obs (q = 5).
 #   Figure 4: confounder's rate vs q at delta_obs = 0 (reduction persists in q).
 #
-# Colours: Okabe-Ito (colour-blind safe); shapes and line types also differ.
 # Output: section3_study3_summary.csv and plot_study3_*.pdf
 
 suppressWarnings(options(warn = -1))
