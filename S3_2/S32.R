@@ -14,7 +14,6 @@
 #             ("surprise curve"), n = 100, K in {1,5}, with an oracle baseline.
 #   Part B2 : the same MSE for SS split by whether SS included a confounder.
 #
-# Colours: Okabe-Ito (colour-blind safe); shapes and line types also differ.
 # Output: section3_study2_*.csv and plot_study2_*.pdf
 
 suppressWarnings(options(warn = -1))
