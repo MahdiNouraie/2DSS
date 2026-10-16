@@ -9,9 +9,7 @@
 #                      baselines' CEILINGS, not their package-tuned versions)
 #   Fixed tau = 0.3  : pre-specified, no knowledge of s
 #   Fixed tau = 0.6  : pre-specified, the value compatible with the error bound (tau > 1/2)
-# Colours: Okabe-Ito. If section3_study4_summary.csv (from S34.R) is in the working
-# directory it is used for GMUS (elbow) and the best baseline ceiling; otherwise the same
-# values, stored below from the Study 4 run, are used. Either way the figures include them.
+# Uses section3_study4_summary.csv (from S34.R) for GMUS and the baseline ceiling if it is in the working directory, else the values stored below.
 #
 # Outputs: section3_study4b_raw_results.csv, section3_study4b_summary.csv,
 #   section3_study4b_combined.csv, section3_study4b_paired.csv,
