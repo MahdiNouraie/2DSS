@@ -10,24 +10,20 @@ A jittered Lasso fit is, in expectation, an elastic net, so the jittering acts a
 
 ## Folders
 
-Each folder holds one script, named after the study, and the CSV and PDF files it writes.
-The folder names match the sections of the paper.
+Each folder holds one script and the CSV and PDF files it writes. The folder names match the numerical studies in Section 3 of the paper.
 
 | Folder | Script | Content in the paper |
 |---|---|---|
-| `Fig2` | `Fig1.R` | Motivating example (irrepresentable condition violated) |
-| `S3_1` | `S31.R` | Study 1: theory curves (Corollary 2) |
-| `S3_2` | `S32.R` | Study 2: selection performance and confounder exclusion |
-| `S3_3` | `S33.R` | Study 3: error-bound results |
-| `S3_4` | `S34.R` | Study 4: confounders, F1, sensitivity, selection rules |
-| `S3_4_addon` | `S34addon.R` | Study 4: additional runs |
-| `S3_5` | `S35.R` | Study 5: profiles, rules, subset size |
-| `S3_6` | `S36.R` | Study 6: ENet-SS baseline (deterministic elastic net) |
-| `Rat` | `Rat.R` | Rat data: repeated random splits |
-| `Sensitivity` | `Sensitivity.R` | Sensitivity analysis (appendix) |
-
-Some output files keep older labels (`study0`, `corollary1`, `fig1_`).
-`S3_1` is Study 1, and the Fig2 files are for the motivating example.
+| `Fig2` | `Fig1.R` | Motivating example (Section 1.3) |
+| `S3_1` | `S31.R` | Study 1: Corollary 2 in a single fit |
+| `S3_2` | `S32.R` | Study 2: robustness of the aggregated procedure |
+| `S3_3` | `S33.R` | Study 3: does the PFER bound hold? |
+| `S3_4` | `S34.R` | Study 4: comparison with measurement-error baselines |
+| `S3_4_addon` | `S34addon.R` | Study 4: role of the selection rule (largest-gap, known s, fixed τ) |
+| `S3_5` | `S35.R` | Study 5: when the largest-gap rule fails |
+| `S3_6` | `S36.R` | Study 6: is the random noise needed? (ENet-SS) |
+| `Rat` | `Rat.R` | Rat data: full-data selection and repeated train–test splits |
+| `Sensitivity` | `Sensitivity.R` | Appendix: sensitivity to the noise grid and the weights |
 
 ## Usage
 
@@ -35,6 +31,12 @@ Some output files keep older labels (`study0`, `corollary1`, `fig1_`).
 2. Run the script. It writes `section3_*.csv` (results) and `plot_*.pdf` (figures) into the same folder.
 3. The PDFs are the figures used in the paper.
 
+Required packages: `glmnet`, `parallel`, `ggplot2`, and `GEOquery` (for `Rat.R`).
+
+Notes:
+- `Rat.R` downloads the data from GEO (series GSE5680), so it needs an internet connection.
+- `S34addon.R` uses `section3_study4_summary.csv` from `S3_4` if that file is in the working directory. Otherwise it uses the values stored in the script.
+
 ## Contact
 
-Mahdi Nouraie, soleil.nouraie@mq.edu.au
+Mahdi Nouraie, soheil.nouraie@mq.edu.au
