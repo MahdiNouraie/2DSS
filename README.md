@@ -25,7 +25,6 @@ The folder names match the sections of the paper.
 | `S3_6` | `S36.R` | Study 6: ENet-SS baseline (deterministic elastic net) |
 | `Rat` | `Rat.R` | Rat data: repeated random splits |
 | `Sensitivity` | `Sensitivity.R` | Sensitivity analysis (appendix) |
-| `Diagram` | – | Figure 1 (schematic) |
 
 Some output files keep older labels (`study0`, `corollary1`, `fig1_`).
 `S3_1` is Study 1, and the Fig2 files are for the motivating example.
