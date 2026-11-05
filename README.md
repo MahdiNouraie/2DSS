@@ -41,7 +41,7 @@ Notes:
 
 The simulations use parallel computing (`parallel::mclapply`) on 7 CPU cores. All results were produced on a MacBook Air (13-inch).
 Most scripts use `min(7, detectCores() - 1)` cores, and `S35.R` sets 7 directly.
-`mclapply` does not run in parallel on Windows. There, set the number of cores to 1, which is slow for the larger studies.
+`mclapply` needs `mc.cores = 1` on Windows (no forking). There, set the number of cores to 1; the scripts then run serially and slowly.
 
 ## Contact
 
