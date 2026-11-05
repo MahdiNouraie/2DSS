@@ -31,8 +31,6 @@ Each folder holds one script and the CSV and PDF files it writes. The folder nam
 2. Run the script. It writes `section3_*.csv` (results) and `plot_*.pdf` (figures) into the same folder.
 3. The PDFs are the figures used in the paper.
 
-Required packages: `glmnet`, `parallel`, `ggplot2`, and `GEOquery` (for `Rat.R`).
-
 Notes:
 - `Rat.R` downloads the data from GEO (series GSE5680), so it needs an internet connection.
 - `S34addon.R` uses `section3_study4_summary.csv` from `S3_4` if that file is in the working directory. Otherwise it uses the values stored in the script.
