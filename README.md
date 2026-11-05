@@ -28,12 +28,20 @@ Each folder holds one script and the CSV and PDF files it writes. The folder nam
 ## Usage
 
 1. Open the script in R and set the working directory to its folder.
-2. Run the script. It writes `section3_*.csv` (results) and `plot_*.pdf` (figures) into the same folder.
+2. Run the script. It writes its CSV result files and PDF figures into the same folder.
 3. The PDFs are the figures used in the paper.
+
+Required packages: `glmnet`, `parallel`, `ggplot2`, `latex2exp`, `viridisLite`, `GEOquery` (for `Rat.R`), `hdme` and `BDcocolasso` (for `S34.R`). The scripts install missing packages automatically.
 
 Notes:
 - `Rat.R` downloads the data from GEO (series GSE5680), so it needs an internet connection.
 - `S34addon.R` uses `section3_study4_summary.csv` from `S3_4` if that file is in the working directory. Otherwise it uses the values stored in the script.
+
+## Computing
+
+The simulations use parallel computing (`parallel::mclapply`) on 7 CPU cores. All results were produced on a MacBook Air (13-inch).
+Most scripts use `min(7, detectCores() - 1)` cores, and `S35.R` sets 7 directly.
+`mclapply` does not run in parallel on Windows. There, set the number of cores to 1, which is slow for the larger studies.
 
 ## Contact
 
