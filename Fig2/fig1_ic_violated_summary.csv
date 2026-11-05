@@ -1,0 +1,57 @@
+"group","delta","n_features","mean","min","max"
+"Strong relevant",0,1,1,1,1
+"Strong relevant",0.025,1,1,1,1
+"Strong relevant",0.05,1,1,1,1
+"Strong relevant",0.1,1,1,1,1
+"Strong relevant",0.15,1,1,1,1
+"Strong relevant",0.2,1,1,1,1
+"Strong relevant",0.3,1,1,1,1
+"Strong relevant",0.4,1,1,1,1
+"Strong relevant",0.5,1,1,1,1
+"Strong relevant",0.75,1,1,1,1
+"Strong relevant",1,1,0.99,0.99,0.99
+"Strong relevant",1.5,1,0.86,0.86,0.86
+"Strong relevant",2,1,0.72,0.72,0.72
+"Strong relevant",3,1,0.39,0.39,0.39
+"Weak relevant",0,4,0.5625,0.25,0.94
+"Weak relevant",0.025,4,0.5525,0.23,0.92
+"Weak relevant",0.05,4,0.57,0.25,0.9
+"Weak relevant",0.1,4,0.5975,0.33,0.9
+"Weak relevant",0.15,4,0.6225,0.24,0.88
+"Weak relevant",0.2,4,0.6175,0.29,0.94
+"Weak relevant",0.3,4,0.61,0.27,0.83
+"Weak relevant",0.4,4,0.5425,0.16,0.81
+"Weak relevant",0.5,4,0.4675,0.17,0.69
+"Weak relevant",0.75,4,0.29,0.07,0.46
+"Weak relevant",1,4,0.2025,0.03,0.31
+"Weak relevant",1.5,4,0.1125,0.02,0.19
+"Weak relevant",2,4,0.0875,0.03,0.11
+"Weak relevant",3,4,0.0425,0.03,0.05
+"Confounder",0,10,0.468,0.04,0.93
+"Confounder",0.025,10,0.471,0.09,0.91
+"Confounder",0.05,10,0.444,0.09,0.84
+"Confounder",0.1,10,0.41,0.06,0.82
+"Confounder",0.15,10,0.359,0.05,0.78
+"Confounder",0.2,10,0.293,0.1,0.65
+"Confounder",0.3,10,0.2,0.03,0.42
+"Confounder",0.4,10,0.119,0.05,0.2
+"Confounder",0.5,10,0.093,0.04,0.19
+"Confounder",0.75,10,0.035,0.02,0.05
+"Confounder",1,10,0.023,0,0.05
+"Confounder",1.5,10,0.036,0.02,0.06
+"Confounder",2,10,0.035,0.01,0.07
+"Confounder",3,10,0.031,0,0.07
+"Other irrelevant",0,985,0.0129137055837563,0,0.31
+"Other irrelevant",0.025,985,0.0136243654822334,0,0.28
+"Other irrelevant",0.05,985,0.0140101522842639,0,0.33
+"Other irrelevant",0.1,985,0.0162131979695431,0,0.26
+"Other irrelevant",0.15,985,0.0186802030456852,0,0.25
+"Other irrelevant",0.2,985,0.021492385786802,0,0.26
+"Other irrelevant",0.3,985,0.0259593908629442,0,0.24
+"Other irrelevant",0.4,985,0.0298680203045686,0,0.27
+"Other irrelevant",0.5,985,0.0323756345177666,0,0.29
+"Other irrelevant",0.75,985,0.0353401015228427,0,0.35
+"Other irrelevant",1,985,0.0373096446700508,0,0.22
+"Other irrelevant",1.5,985,0.0391573604060914,0,0.17
+"Other irrelevant",2,985,0.0394213197969544,0,0.14
+"Other irrelevant",3,985,0.0400507614213198,0,0.12

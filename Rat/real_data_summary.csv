@@ -1,0 +1,6 @@
+"method","n_selected","tau_hat"
+"Lasso",15,NA
+"SS (largest-gap)",2,0.425
+"SS (tau=0.6)",0,0.6
+"Jitter-only",4,0.4115
+"2D-SS",5,0.118
