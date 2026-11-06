@@ -1,5 +1,5 @@
 # Study 3: does the PFER bound of Theorem 6 hold, and where does the
-# confounder rate differ? Runs everything and draws the figures.
+# confounder rate differ?
 #
 # Design: Example 2 (Sigma_SS = I_5, beta_S = (-4,-2,.5,.6,.7), confounder
 # covariance a = (1/8,1/4,1/2,1/2,1/2)), K confounders, embedded in p = 1000.
@@ -9,12 +9,12 @@
 # to dfmax so that q features enter the path.
 #
 #   Figure 1: empirical PFER vs delta_obs (q = 5, tau = 0.6) against the bound.
-#   Figure 2: empirical PFER vs bound for EVERY (n,K,delta_obs,q,tau,method) cell;
-#             all points on or below the diagonal means the bound holds.
+#   Figure 2: empirical PFER vs bound in every (n,K,delta_obs,q,tau,method) setting;
+#             the bound holds when all points lie on or below the diagonal.
 #   Figure 3: confounder's complementary-pairs rate vs delta_obs (q = 5).
 #   Figure 4: confounder's rate vs q at delta_obs = 0 (reduction persists in q).
 #
-# Colours: Okabe-Ito (colour-blind safe); shapes and line types also differ.
+# Colours: Okabe-Ito.
 # Output: section3_study3_summary.csv and plot_study3_*.pdf
 
 suppressWarnings(options(warn = -1))
@@ -109,7 +109,7 @@ one_pair_fbar <- function(n, K, delta_obs, grid) {
 }
 
 # ---------------------------------------------------------------------------
-# One cell (n, K, delta_obs, method): N_pairs pairs, then summaries for every
+# One setting (n, K, delta_obs, method): N_pairs pairs, then summaries for every
 # (q, tau).
 # ---------------------------------------------------------------------------
 run_cell <- function(n, K, delta_obs, method) {
@@ -175,7 +175,7 @@ f1 <- ggplot(d1, aes(delta_obs, empirical_PFER, color = method, shape = method, 
        color = NULL, fill = NULL, shape = NULL) + th
 ggsave("plot_study3_pfer_bound.pdf", f1, width = 9, height = 6)
 
-# Fig 2: empirical vs bound, every cell
+# Fig 2: empirical vs bound, every setting
 d2 <- results_df
 lim <- max(d2$theoretical_bound)
 f2 <- ggplot(d2, aes(theoretical_bound, empirical_PFER, color = method, shape = factor(tau))) +
