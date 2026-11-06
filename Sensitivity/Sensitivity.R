@@ -2,9 +2,9 @@
 # Design: as Study 2 (Sigma_SS = I_5, beta_S = (-4,-2,.5,.6,.7), confounder
 # covariance a = (1/8,1/4,1/2,1/2,1/2), p = 1000, delta_obs = 0), n = 200, K in {1,5}.
 #
-# All grid/weight configurations are formed from ONE set of selection frequencies per
+# All grid and weight configurations are formed from one set of selection frequencies per
 # replicate, computed on a fine grid delta = 0, 0.125, ..., 3 (B = 50 half-sample fits
-# per level). The configurations therefore see the same data and the same fits.
+# per level), so they all see the same data and the same fits.
 # Reference: Stability Selection with B = 250 half-sample fits at delta = 0.
 #
 # Families of configurations (m levels equally spaced from 0 to delta_max unless stated)
@@ -12,7 +12,7 @@
 #   levels: m in {3, 5, 9}, delta_max = 1, uniform weights
 #   weights: w_delta ~ exp(-kappa * delta / delta_max), kappa in {-2, 0, 2, 4},
 #            m = 5, delta_max in {1, 2}  (kappa < 0 favours large delta)
-#   noSS  : delta in {0.25, 0.5, 0.75, 1} (no delta = 0 slice), uniform
+#   noSS  : delta in {0.25, 0.5, 0.75, 1} (without the delta = 0 level), uniform
 # Rules: largest-gap, and known s (top-5 frequencies).
 # Outputs: sens_raw.csv, sens_summary.csv, plot_sens_f1.pdf,
 #          plot_sens_confounder.pdf, plot_sens_margin.pdf
