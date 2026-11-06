@@ -1,22 +1,21 @@
 # Study 5: when does the largest-gap rule fail, and what should replace it?
 #
-# Theorem "gap" needs the boundary gap f_(s) - f_(s+1) to exceed every
-# within-group gap. With strong AND weak signals the largest gap can fall
-# inside S, and the rule underestimates s. Here we
-#   (a) construct the failure (weak strength w = 0.5 is the original design),
-#   (b) sweep the weak-signal strength to show where it appears and disappears,
-#   (c) compare the largest-gap rule with a known-s rule (top-s) and with
+# Theorem 5 needs the boundary gap f_(s) - f_(s+1) to exceed every within-group gap.
+# With strong and weak signals together, the largest gap can fall inside S and the rule
+# underestimates s. The study
+#   (a) constructs the failure (weak strength w = 0.5),
+#   (b) sweeps the weak-signal strength,
+#   (c) compares the largest-gap rule with a known-s rule (top-s) and with
 #       fixed thresholds tau in {0.15, 0.3, 0.6},
-#   (d) do this for both the plain aggregation (SS, delta = 0 only) and the
-#       2D-SS aggregation (grid 0, .25, .5, .75, 1). No confounder, no extra
-#       measurement error: this isolates the thresholding step.
+#   (d) does this for the plain aggregation (SS, delta = 0 only) and the 2D-SS
+#       aggregation (grid 0, .25, .5, .75, 1), with no confounder and no extra
+#       measurement error, so that only the thresholding step differs.
 #
 # Design: n = 100, p = 500, s = 5, Sigma = I,
 #         beta = (6, 5, w*1, w*0.9, w*0.8), w in {0.3, 0.5, 0.8, 1.2, 2}.
 #         (w = 0.5 gives (0.5, 0.45, 0.4).)
 #
-# Colours: Okabe-Ito (colour-blind safe). SS #D55E00, 2D-SS #0072B2 as in the
-# other studies; rules use the remaining Okabe-Ito colours plus linetype/shape.
+# Colours: Okabe-Ito. SS #D55E00 and 2D-SS #0072B2 as in the other studies.
 
 suppressWarnings(options(warn = -1))
 
