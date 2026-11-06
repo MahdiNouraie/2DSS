@@ -1,5 +1,4 @@
-# Study 4: comparison with measurement-error baselines. Runs everything and draws
-# the figures.
+# Study 4: comparison with measurement-error baselines.
 #
 # Baselines: corrected Lasso (Loh & Wainwright 2012) and GMUS (Rosenbaum &
 # Tsybakov 2010; Sorensen et al. 2018), both from hdme; CoCoLasso (Datta & Zou
@@ -17,13 +16,12 @@
 #
 #   Fig 1: F1 vs delta_obs (ours + baselines package-tuned and best-tuned ceiling), by design.
 #   Fig 2: confounder inclusion vs delta_obs, by design with confounders.
-#   ceiling : tuning-path point with the highest F1 at the true noise level (uses the
-#             truth; an optimistic upper bound on what tuning could achieve).
+#   ceiling : tuning-path point with the highest F1 at the true noise level (uses the truth).
 #   Fig 3: sensitivity of corrected Lasso / CoCoLasso to the assumed noise level (F1).
 #   Fig 4: min rule vs 1-SE rule vs ceiling for every baseline (F1), K = 1.
 #
-# Colours: Okabe-Ito (colour-blind safe); line types and shapes also differ.
-# Set quick_test <- TRUE to time a 3-replicate run first.
+# Colours: Okabe-Ito.
+# quick_test <- TRUE runs 3 replicates.
 
 suppressWarnings(options(warn = -1))
 
@@ -142,31 +140,22 @@ aggregate_frequencies <- function(X, y, grid, n1_use, B_use, lam, alpha) {
 }
 
 # ---------------------------------------------------------------------------
-# Baseline wrappers (following the package sources, the hdme vignette and the
-# original papers)
-#
-# Corrected Lasso (Loh & Wainwright 2012; hdme):  needs Sigma_uu = sigma^2 I.
-#   cv_corrected_lasso() picks the l1 radius by K-fold CV of the corrected loss
-#   ($radius_min; $radius_1se is the 1-SE rule). Fit on the radius grid via
-#   corrected_lasso(W, y, sigmaUU, radii)$betaCorr.
-# CoCoLasso (Datta & Zou 2017; BDcocolasso::coco): needs tau = SD of the additive
-#   error (Sigma_hat = Z'Z/n - tau^2 I). tau is on the scale of Z, so scale.Z = FALSE
-#   (all columns have unit variance here). Tuning: calibrated K-fold CV over a
-#   100-point lambda path: $beta.opt (CV minimum) and $beta.sd (1-SE rule).
-# GMUS (Sorensen et al. 2018; hdme::gmus): does NOT take a noise level. It needs
-#   (lambda, delta); the authors fix lambda at the cross-validated lasso value
-#   (lambda_min or lambda_se, from cv.glmnet) and choose delta by the ELBOW RULE on
-#   the number-of-nonzeros-versus-delta curve (Rosenbaum & Tsybakov 2010). We
-#   automate the elbow as the point farthest below the chord of the normalised curve,
-#   on delta in {0, 0.05, ..., 0.5} (the range of the authors' own elbow plots).
-#
-# Selections returned per baseline:
-#   cv / cv1se : the packages' data-driven tuning (min rule / 1-SE rule),
-#   best       : the tuning-path point with the highest F1. This uses the truth, so
-#                it is an optimistic CEILING for any tuning rule.
-# Nonzero = |coef| > 1e-10 (the threshold hdme uses; LP solutions carry dust).
-# Errors from forked workers are returned as data, since their output is not shown.
+# Baseline wrappers
+# Corrected Lasso (Loh & Wainwright 2012; hdme) needs Sigma_uu = sigma^2 I. The l1 radius
+#   is chosen by cv_corrected_lasso() (min rule or 1-SE rule).
+# CoCoLasso (Datta & Zou 2017; BDcocolasso::coco) needs tau, the SD of the additive error.
+#   scale.Z = FALSE because all columns have unit variance. Tuning is calibrated CV over
+#   100 lambda values (min rule or 1-SE rule).
+# GMUS (Sorensen et al. 2018; hdme::gmus) takes no noise level. lambda is the cv.glmnet
+#   value (min or 1-SE) and delta is chosen by the elbow rule (Rosenbaum & Tsybakov 2010),
+#   automated as the point farthest below the chord of the normalised nonzeros-versus-delta
+#   curve, on delta in {0, 0.05, ..., 0.5}.
+# cv / cv1se : the packages' own tuning (min rule / 1-SE rule).
+# best       : the tuning-path point with the highest F1; it uses the truth, so it is a ceiling.
+# Coefficients with |coef| > 1e-10 count as nonzero (the hdme threshold).
+# Errors from forked workers are returned as data.
 # ---------------------------------------------------------------------------
+
 best_col <- function(B) {
   f1 <- apply(abs(B) > 1e-10, 2, function(v) selection_metrics(v, 0)[["F1"]])
   which.max(f1)
