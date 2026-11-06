@@ -21,7 +21,7 @@
 #             probability p_k(delta)
 #        B  = prediction MSE on fresh data at future noise levels delta_test
 #             (training clean), after an OLS refit on the selected set; Oracle added
-#        C  = selection metrics when the TRAINING data already carry measurement
+#        C  = selection metrics when the training data already carry measurement
 #             error, delta_obs in {0.5, 1}
 # Each part has a switch (RUN_A, RUN_A2, RUN_B, RUN_C). A part that is switched off
 # is read back from its CSV if the plots need it, so finished parts need not be rerun.
