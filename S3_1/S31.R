@@ -1,5 +1,4 @@
-# Study 1: single plain fit vs single jittered fit (Corollary "benefit").
-# One script: runs the simulation, writes the CSVs and draws the paper figures.
+# Study 1: single plain fit vs single jittered fit (Corollary 2).
 #
 # Designs (each with one confounder)
 #   A  Example 2: Sigma_SS = I_5, a = (1/8,1/4,1/2,1/2,1/2); Lasso IC violated
@@ -9,7 +8,7 @@
 # Outcome: P(exact recovery of S with correct signs, confounder excluded) of one
 # Lasso fit at lambda = c * sqrt(log(p)/n1).
 # Part 1: grid over (design, n1, nu), c = 1.   Part 2: tuning constant c at n1 = 500.
-# Colours: Okabe-Ito / viridis (colour-blind safe), with shapes and line types.
+# Colours: Okabe-Ito and viridis.
 #
 # Output: section3_study0_{results,summary,cnu,lambda_sensitivity}.csv and
 #         plot_corollary1_{curves,vs_n1,lambda,cnu}.pdf
@@ -179,7 +178,7 @@ p3 <- ggplot(lam_df, aes(nu, exact_recovery, color = c_lam_f, shape = c_lam_f)) 
        shape = TeX("$c = \\lambda / \\sqrt{\\log(p)/n_1}$")) + th
 ggsave("plot_corollary1_lambda.pdf", p3, width = 13, height = 4.8)
 
-# Figure D (optional): population c_nu, capped at 3 (Example 1 grows past 100)
+# Figure D: population c_nu, capped at 3 (Example 1 grows past 100)
 cnu_df$n1_f <- factor(cnu_df$n1, levels = n1_grid)
 cnu_df$design_f <- dfac(cnu_df$design)
 p4 <- ggplot(cnu_df, aes(nu, c_nu, color = n1_f)) +
