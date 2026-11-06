@@ -1,4 +1,4 @@
-# Study 2: robustness of the aggregated procedure. Runs everything and draws the figures.
+# Study 2: robustness of the aggregated procedure.
 #
 # Design: Example 2 (Sigma_SS = I_5, beta_S = (-4,-2,.5,.6,.7), confounder
 # covariance a = (1/8,1/4,1/2,1/2,1/2)), embedded in p = 1000 features, trained at
@@ -14,7 +14,7 @@
 #             ("surprise curve"), n = 100, K in {1,5}, with an oracle baseline.
 #   Part B2 : the same MSE for SS split by whether SS included a confounder.
 #
-# Colours: Okabe-Ito (colour-blind safe); shapes and line types also differ.
+# Colours: Okabe-Ito.
 # Output: section3_study2_*.csv and plot_study2_*.pdf
 
 suppressWarnings(options(warn = -1))
