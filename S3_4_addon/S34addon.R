@@ -1,17 +1,17 @@
-# Study 4 add-on (one script: runs the experiment, then writes all tables and figures).
-# Is 2D-SS's lower F1 at low noise caused by the largest-gap rule rather than by the aggregation?
+# Study 4 add-on: is the lower F1 of 2D-SS at low noise caused by the largest-gap rule
+# rather than by the aggregation?
 #
 # Same design, settings and generator as S34.R (n = 100, p = 200, K in {1, 5, 0},
 # delta_obs in {0, .5, 1, 1.5, 2}, B = 50, 2D-SS grid seq(0, 1, 5), 40 replicates).
 # Only SS and 2D-SS are run (no baselines), each with four selection rules:
-#   Largest-gap      : the rule used in Study 4 (close to the Study 4 rows; this is a fresh run)
-#   Known s (top-s)  : the s most frequent features (uses the true s; compare with the
-#                      baselines' CEILINGS, not their package-tuned versions)
+# Largest-gap      : the rule used in Study 4 (this is a fresh run)
+# Known s (top-s)  : the s most frequent features (uses the true s; compare with the
+#                      baseline ceilings)
 #   Fixed tau = 0.3  : pre-specified, no knowledge of s
 #   Fixed tau = 0.6  : pre-specified, the value compatible with the error bound (tau > 1/2)
 # Colours: Okabe-Ito. If section3_study4_summary.csv (from S34.R) is in the working
-# directory it is used for GMUS (elbow) and the best baseline ceiling; otherwise the same
-# values, stored below from the Study 4 run, are used. Either way the figures include them.
+# directory it is used for GMUS (elbow) and the best baseline ceiling; otherwise the values
+# stored below from the Study 4 run are used.
 #
 # Outputs: section3_study4b_raw_results.csv, section3_study4b_summary.csv,
 #   section3_study4b_combined.csv, section3_study4b_paired.csv,
