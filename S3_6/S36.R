@@ -1,21 +1,19 @@
-# Study 6: elastic-net-path baseline ("ENet-SS") against SS and 2D-SS.
+# Study 6: is the random noise needed? Elastic-net counterparts of SS and 2D-SS.
 #
-# Question: by Proposition 1 a jittered Lasso fit is, in
-# expectation, a Lasso with an added ridge term delta^2. Is 2D-SS then just
-# Stability Selection run along a deterministic ridge path?
+# By Proposition 1, a jittered Lasso fit is in expectation a Lasso with an added ridge
+# term delta^2. Is 2D-SS then just Stability Selection run along a deterministic ridge path?
 #
-# Five procedures, same data, same half-sample size, same grid, same B per
-# grid point, same lambda, same largest-gap rule:
-#   SS       : delta = 0 only, B_SS = m * B half-samples (as in Study 2)
-#   ENet-SS  : deterministic elastic net over the grid delta_j; NO random noise.
-#              The ridge weight is delta_j^2, matched to the expected jittered fit
-#              (see enet_pars below).
-#   2D-SS    : Gaussian design jittering over the same grid (as in Study 2).
-#   SS-ENet  : delta = 0 only, fixed elastic net with ridge weight ENET_G^2.
-#   2D-SS-ENet : as 2D-SS, with that fixed elastic net as base selector (effective
-#              ridge weight about ENET_G^2 + delta^2).
-# SS vs ENet-SS   = effect of the ridge term.
-# ENet-SS vs 2D-SS = effect of the random noise beyond its expectation.
+# Five procedures, same data, same half-sample size, same B per grid point, same lambda
+# and the same largest-gap rule:
+#   SS          : delta = 0 only, B_SS = m * B half-samples (as in Study 2)
+#   SS-ENet     : delta = 0 only, fixed elastic net with ridge weight ENET_G^2
+#   ENet-SS     : deterministic elastic net over the grid delta_j, no random noise; the ridge
+#                 weight is delta_j^2, matched to the expected jittered fit (see enet_pars)
+#   2D-SS       : Gaussian design jittering over the grid (as in Study 2)
+#   2D-SS-ENet  : as 2D-SS, with the fixed elastic net of SS-ENet as base selector
+#                 (ridge weight ENET_G^2 + delta^2 (1 + ENET_G^2) in expectation)
+# SS vs ENet-SS shows the effect of the ridge term, ENet-SS vs 2D-SS the effect of the
+# random noise.
 #
 # Design: same as Study 2 (Example 2 embedded in p = 1000).
 # Parts: A  = largest-gap selection metrics over (n, K), clean training data
@@ -30,7 +28,7 @@
 #
 # Output: section3_enetss_{selection_raw,selection_summary,cp_summary,
 #         mse_raw,mse_summary,obs_raw,obs_summary}.csv and plot_enetss_*.pdf
-# Set QUICK <- TRUE for a fast smoke test (a few minutes).
+# QUICK <- TRUE runs a short test.
 
 suppressWarnings(options(warn = -1))
 
@@ -126,7 +124,7 @@ largest_gap_select <- function(fbar) {
 #   E[ (1/2n)||y - Z b||^2 ] + lam ||b||_1
 #     = (1/2n)||y - X b'||^2 + (delta^2/2) ||b'||^2 + lam sqrt(1 + delta^2) ||b'||_1 .
 # glmnet (gaussian) standardises y internally, which leaves the L1 part on the
-# original scale but divides the ridge part by sd(y) (checked numerically), i.e. it
+# original scale but divides the ridge part by sd(y), i.e. it
 # minimises (1/2n)RSS + L [ (1-a)/(2 sd_y) ||b||^2 + a ||b||_1 ], hence
 #   L (1 - a) = delta^2 * sd_y,   L a = lam sqrt(1 + delta^2),
 # with sd_y the (1/n) standard deviation of the y used in the fit.
