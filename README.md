@@ -21,7 +21,7 @@ Each folder holds one script and the CSV and PDF files it writes. The folder nam
 | `S3_4` | `S34.R` | Study 4: comparison with measurement-error baselines |
 | `S3_4_addon` | `S34addon.R` | Study 4: role of the selection rule (largest-gap, known s, fixed τ) |
 | `S3_5` | `S35.R` | Study 5: when the largest-gap rule fails |
-| `S3_6` | `S36.R` | Study 6: is the random noise needed? (ENet-SS) |
+| `S3_6` | `S36.R` | Study 6: is the random noise needed? (elastic-net counterparts of SS and 2D-SS) |
 | `Rat` | `Rat.R` | Rat data: full-data selection and repeated train–test splits |
 | `Sensitivity` | `Sensitivity.R` | Appendix: sensitivity to the noise grid and the weights |
 
